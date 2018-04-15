@@ -1,0 +1,33 @@
+{% load staticfiles %} <!-- For Video No: 7 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}বাংলা অভিধান {% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static "Dictionary/css/default.css" %}"> <!-- For Video No: 7 -->
+	<script src="{% static "Dictionary/js/jquery-2.1.3.min.js" %}"></script> <!-- For Video No: 16 -->
+	<script src="{% static "Dictionary/js/ajax.js" %}"></script> <!-- For Video No: 16 -->
+
+</head>
+
+<body>
+
+	<div id="page">
+
+	<div id="sidebar">
+		{% block sidebar %}
+	<ul>
+		<li><a href="/dictionarys/all">All words</a></li>
+		<li><a href="/admin/">Admin</a></li>
+	</ul>
+	{% endblock %}
+	</div>
+
+	<div id="content">
+		{% block content %}This is the content area{% endblock %}
+	<img width="300" src="{% static "Dictionary/images/bd.png" %}"/> <!-- For Video No: 7 -->
+	</div>
+
+	</div>
+
+</body>
+</html>
