@@ -1,0 +1,11 @@
+{% if dictionarys.count > 0 %}
+
+{% for dictionary in dictionarys %}
+	<li><a href="/dictionarys/get/{{ dictionary.id }}/">{{ dictionary.word }}</a></li>
+{% endfor %}
+
+{% else %}
+
+<li>No word to show!</li>
+
+{% endif %}

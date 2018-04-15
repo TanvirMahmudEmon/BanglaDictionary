@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+	<ul>
+		<li><a href="/dictionarys/all">সকল শব্দ</a></li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ dictionary.word }}</h1>
+<h2>{{ dictionary.mean }}</h2>
+
+<p style="color: green">{{dictionary.likes}} জন শব্দটি পছন্দ করেছেন</p> <!-- For Video No: 13 -->
+<p><a href="/dictionarys/like/{{dictionary.id}}">Like</a></p> <!-- For Video No: 13 -->
+
+{% endblock %}

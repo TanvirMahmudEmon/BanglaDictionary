@@ -1,0 +1,40 @@
+{% extends "base.html" %} <!-- For Video No: 7 -->
+
+{% block sidebar %} <!-- For Video No: 12 -->
+<ul> <!-- For Video No: 12 -->
+	<li><a href="/dictionarys/all">সকল শব্দ</a></li>
+</ul>
+
+<h3>শব্দ খুজুন</h3> <!-- For Video No: 16 -->
+{% csrf_token %} <!-- For Video No: 16 -->
+<input type="text" id="search" name="search" /> <!-- For Video No: 16 -->
+
+<ul id="search-results"> <!-- For Video No: 16 -->
+
+</ul> <!-- For Video No: 16 -->
+
+{% endblock %} <!-- For Video No: 12 -->
+
+{% block content %} <!-- For Video No: 7 -->
+
+{#<h2>Language is: {{language}}</h2> <!-- For Video No: 8 -->#}
+{##}
+{#<h2>Session Language is: {{session_language}}</h2> <!-- For Video No: 8 -->#}
+
+{% if dictionarys.count > 0 %}
+
+{% for dictionary in dictionarys %} <!-- For Loop Start -->
+<div>
+<h1><a href="/dictionarys/get/{{ dictionary.id }}/">{{ dictionary.word}}</a></h1>
+<h2>{{ dictionary.mean |truncatewords:"20" }}</h2>
+<p style="color: green"> {{dictionary.likes}} জন শব্দটি পছন্দ করেছেন</p> <!-- For Video No: 13 -->
+</div>
+{% endfor %} <!-- End of For Loop -->
+
+{% else %}
+
+<p>None to show</p>
+
+{% endif %}
+
+{% endblock %} <!-- For Video No: 7 -->
